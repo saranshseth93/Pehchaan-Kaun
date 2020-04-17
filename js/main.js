@@ -67,6 +67,11 @@ video.addEventListener("playing", () => {
       [`${faceapi.utils.round(interpolatedAge, 0)} years`],
       bottomRight
     ).draw(canvas);
+
+    new faceapi.draw.DrawTextField(
+      ['Gender: '+resizedDetections[0].gender],
+      bottomRight
+    ).draw(canvas);
   }, 100);
 });
 

@@ -62,6 +62,10 @@ video.addEventListener("playing", () => {
       x: resizedDetections[0].detection.box.bottomRight.x - 50,
       y: resizedDetections[0].detection.box.bottomRight.y
     };
+    const bottomRight1 = {
+      x: (resizedDetections[0].detection.box.bottomRight.x - 50)+20,
+      y: resizedDetections[0].detection.box.bottomRight.y + 20
+    };
 
     new faceapi.draw.DrawTextField(
       [`${faceapi.utils.round(interpolatedAge, 0)} years`],
@@ -70,7 +74,7 @@ video.addEventListener("playing", () => {
 
     new faceapi.draw.DrawTextField(
       ['Gender: '+resizedDetections[0].gender],
-      bottomRight
+      bottomRight1
     ).draw(canvas);
   }, 100);
 });

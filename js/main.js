@@ -13,7 +13,7 @@ Promise.all([
 
 function startVideo() {
   var getUserMedia = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.mediaDevices.getUserMedia);
-  getUserMedia(
+  getUserMedia.call(
     { video: {} },
     stream => (video.srcObject = stream),
     err => console.error(err)

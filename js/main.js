@@ -17,12 +17,8 @@ function startVideo() {
 var video = document.querySelector("video");
 
 function successCallback(stream) {
-  if (window.webkitURL) {
-    video.src = window.webkitURL.createObjectURL(stream);
-} else {
-    video.srcObject = stream;
-}
 
+video.srcObject = stream;
 $('.loader').fadeOut();
   $('video').fadeIn();
   video.play();

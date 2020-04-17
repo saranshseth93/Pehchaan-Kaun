@@ -63,8 +63,8 @@ video.addEventListener("playing", () => {
       y: resizedDetections[0].detection.box.bottomRight.y
     };
     const bottomRight1 = {
-      x: (resizedDetections[0].detection.box.bottomRight.x - 50)+20,
-      y: resizedDetections[0].detection.box.bottomRight.y - 5
+      x: (resizedDetections[0].detection.box.bottomRight.x - 50)-10,
+      y: resizedDetections[0].detection.box.bottomRight.y + 20
     };
 
     new faceapi.draw.DrawTextField(

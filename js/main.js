@@ -43,6 +43,7 @@ video.addEventListener("playing", () => {
     faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
     faceapi.draw.drawFaceExpressions(canvas, resizedDetections);
 
+    console.log(resizedDetections);
     const age = resizedDetections[0].age;
     const interpolatedAge = interpolateAgePredictions(age);
     const bottomRight = {

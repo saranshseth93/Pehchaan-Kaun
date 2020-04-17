@@ -1,13 +1,15 @@
 const video = document.getElementById("video");
 let predictedAges = [];
-
+$('.loader').fadeIn();
+$('video').fadeOut();
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri("/models"),
   faceapi.nets.faceLandmark68Net.loadFromUri("/models"),
   faceapi.nets.faceRecognitionNet.loadFromUri("/models"),
   faceapi.nets.faceExpressionNet.loadFromUri("/models"),
   faceapi.nets.ageGenderNet.loadFromUri("/models")
-]).then(startVideo);
+]
+).then(startVideo);
 
 function startVideo() {
   navigator.getUserMedia(
@@ -15,6 +17,8 @@ function startVideo() {
     stream => (video.srcObject = stream),
     err => console.error(err)
   );
+  $('.loader').fadeOut();
+  $('video').fadeIn();
 }
 
 video.addEventListener("playing", () => {

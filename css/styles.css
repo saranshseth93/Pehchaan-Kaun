@@ -12,3 +12,23 @@ body {
 canvas {
   position: absolute;
 }
+
+.center{
+  text-align: center;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    max-height: 100vh;
+    max-width: 100vw;
+}
+h1{
+  font-family: 'Manrope', sans-serif;
+  font-size: 40px;
+}
+p{
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  padding: 0 20px;
+}

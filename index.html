@@ -3,12 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Face Detector</title>
+  <title>Pehchan Kaun</title>
+  <link rel="icon" 
+      type="image/png" 
+      href="assets/face-recognition.png">
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&family=Raleway:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="center">
+    <img src="assets/face-recognition.png" alt="" width="160">
+    <h1>Pehchan Kaun</h1>
+    <p>Face detection AI using TensorFlow. Wait for the permission for camera access - Click allow. Wait for the magic to happen.</p>
+    <p>This can detect your age, exact face structure and your mood. Obviously age and mood won't be accurate.</p>
+  <div class=" loader">
+  <img src="assets/bean.gif"/>
   <video id="video" height="560" width="720" autoplay muted></video>
-
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
   <script src="js/face-api.min.js"></script>
   <script src="js/main.js"></script>
 </body>

@@ -13,30 +13,29 @@ Promise.all([
 
 function startVideo() {
 
-  var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-var cameraStream;
+  var constraints = {audio: false, video: true};
+var video = document.querySelector("video");
 
-getUserMedia.call(navigator, {
-    video: true,
-    audio: false //optional
-}, function (stream) {
-    /*
-    Here's where you handle the stream differently. Chrome needs to convert the stream
-    to an object URL, but Firefox's stream already is one.
-    */
-    if (window.webkitURL) {
-        video.src = window.webkitURL.createObjectURL(stream);
-    } else {
-        video.srcObject = stream;
-    }
+function successCallback(stream) {
+  if (window.webkitURL) {
+    video.src = window.webkitURL.createObjectURL(stream);
+} else {
+    video.srcObject = stream;
+}
 
-    //save it for later
-    cameraStream = stream;
-
-    video.play();
-});
-  $('.loader').fadeOut();
+$('.loader').fadeOut();
   $('video').fadeIn();
+  video.play();
+}
+
+function errorCallback(error) {
+  console.log("navigator.getUserMedia error: ", error);
+}
+
+navigator.mediaDevices.getUserMedia(constraints)
+  .then(successCallback)
+  .catch(errorCallback);
+
 }
 
 video.addEventListener("playing", () => {
